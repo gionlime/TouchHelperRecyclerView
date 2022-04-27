@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
 
 /**
- * Created by Administrator on 2016/4/12.
- */
+ * create by jeek
+ * 2022/4/27
+ * des:
+ **/
 public class MyItemTouchCallback extends ItemTouchHelper.Callback {
 
     private ItemTouchAdapter itemTouchAdapter;

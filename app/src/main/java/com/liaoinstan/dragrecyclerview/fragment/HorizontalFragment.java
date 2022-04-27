@@ -22,8 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/4/12.
- */
+ * create by jeek
+ * 2022/4/27
+ * des:
+ **/
 public class HorizontalFragment extends Fragment{
 
     private List<Item> results = new ArrayList<Item>();

@@ -17,8 +17,10 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/4/12.
- */
+ * create by jeek
+ * 2022/4/27
+ * des:
+ **/
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> implements MyItemTouchCallback.ItemTouchAdapter {
 
     private Context context;

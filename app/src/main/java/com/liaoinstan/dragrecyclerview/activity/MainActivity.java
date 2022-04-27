@@ -14,11 +14,14 @@ import com.liaoinstan.dragrecyclerview.fragment.HorizontalFragment;
 import com.liaoinstan.dragrecyclerview.fragment.MainFragment;
 import com.liaoinstan.dragrecyclerview.fragment.GridFragment;
 import com.liaoinstan.dragrecyclerview.fragment.VerticalFragment;
-
+/**
+ * create by jeek
+ * 2022/4/27
+ * des:
+ **/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
-    AppBarLayout A;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

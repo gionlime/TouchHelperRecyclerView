@@ -5,10 +5,10 @@ import android.app.Service;
 import android.os.Vibrator;
 
 /**
- * 手机震动工具类
- * @author Administrator
- * 使用必须添加权限：<uses-permission android:name="android.permission.VIBRATE" />
- */
+ * create by jeek
+ * 2022/4/27
+ * des: 手机震动工具类
+ **/
 public class VibratorUtil {
 
     /**

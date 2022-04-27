@@ -3,8 +3,10 @@ package com.liaoinstan.dragrecyclerview.entity;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2016/4/12.
- */
+ * create by jeek
+ * 2022/4/27
+ * des:
+ **/
 public class Item implements Serializable{
     private int id;
     private String name;
