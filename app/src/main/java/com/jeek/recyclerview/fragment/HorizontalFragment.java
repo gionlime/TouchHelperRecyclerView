@@ -55,7 +55,7 @@ public class HorizontalFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_list, results);
+        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_horizontal, results);
 
         RecyclerView recyclerView = (RecyclerView) view;
         recyclerView.setHasFixedSize(true);

@@ -7,6 +7,10 @@
         <entry key="5DragRecyclerView/src/main/res/layout/fragment_main.xml" value="0.36186594202898553" />
         <entry key="5DragRecyclerView/src/main/res/layout/item_grid.xml" value="0.36186594202898553" />
         <entry key="5DragRecyclerView/src/main/res/layout/item_list.xml" value="0.36186594202898553" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.36186594202898553" />
+        <entry key="app/src/main/res/layout/adapter_item_grid.xml" value="0.36186594202898553" />
+        <entry key="app/src/main/res/layout/adapter_item_horizontal.xml" value="0.36186594202898553" />
+        <entry key="app/src/main/res/layout/adapter_item_list.xml" value="0.36186594202898553" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.36186594202898553" />
       </map>
     </option>

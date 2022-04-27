@@ -45,14 +45,14 @@ public class GridFragment extends Fragment implements DragItemTouchCallback.OnDr
             results.addAll(items);
         else {
             for (int i = 0; i < 3; i++) {
-                results.add(new Item(i * 8 + 0, "收款", R.drawable.takeout_ic_category_brand));
-                results.add(new Item(i * 8 + 1, "转账", R.drawable.takeout_ic_category_flower));
-                results.add(new Item(i * 8 + 2, "余额宝", R.drawable.takeout_ic_category_fruit));
-                results.add(new Item(i * 8 + 3, "手机充值", R.drawable.takeout_ic_category_medicine));
-                results.add(new Item(i * 8 + 4, "医疗", R.drawable.takeout_ic_category_motorcycle));
-                results.add(new Item(i * 8 + 5, "彩票", R.drawable.takeout_ic_category_public));
-                results.add(new Item(i * 8 + 6, "电影", R.drawable.takeout_ic_category_store));
-                results.add(new Item(i * 8 + 7, "游戏", R.drawable.takeout_ic_category_sweet));
+                results.add(new Item(i * 8 + 0, "Item1", R.drawable.takeout_ic_category_brand));
+                results.add(new Item(i * 8 + 1, "Item2", R.drawable.takeout_ic_category_flower));
+                results.add(new Item(i * 8 + 2, "Item3", R.drawable.takeout_ic_category_fruit));
+                results.add(new Item(i * 8 + 3, "Item4", R.drawable.takeout_ic_category_medicine));
+                results.add(new Item(i * 8 + 4, "Item5", R.drawable.takeout_ic_category_motorcycle));
+                results.add(new Item(i * 8 + 5, "Item6", R.drawable.takeout_ic_category_public));
+                results.add(new Item(i * 8 + 6, "Item7", R.drawable.takeout_ic_category_store));
+                results.add(new Item(i * 8 + 7, "Item8", R.drawable.takeout_ic_category_sweet));
             }
         }
         results.remove(results.size() - 1);
