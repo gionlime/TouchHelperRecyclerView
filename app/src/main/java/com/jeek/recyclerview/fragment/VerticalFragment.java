@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import com.jeek.recyclerview.entity.Item;
 import com.jeek.recyclerview.R;
 import com.jeek.recyclerview.adapter.RecyclerAdapter;
-import com.jeek.recyclerview.helper.MyItemTouchCallback;
+import com.jeek.recyclerview.helper.DragItemTouchCallback;
 import com.jeek.recyclerview.helper.OnRecyclerItemClickListener;
 import com.jeek.recyclerview.utils.VibratorUtil;
 
@@ -63,7 +63,7 @@ public class VerticalFragment extends Fragment{
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new MyItemTouchCallback(adapter));
+        final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new DragItemTouchCallback(adapter));
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         recyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(recyclerView) {

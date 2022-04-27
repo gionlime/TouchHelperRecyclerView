@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.ItemTouchHelper;
  * 2022/4/27
  * des:
  **/
-public class MyItemTouchCallback extends ItemTouchHelper.Callback {
+public class DragItemTouchCallback extends ItemTouchHelper.Callback {
 
     private ItemTouchAdapter itemTouchAdapter;
-    public MyItemTouchCallback(ItemTouchAdapter itemTouchAdapter){
+    public DragItemTouchCallback(ItemTouchAdapter itemTouchAdapter){
         this.itemTouchAdapter = itemTouchAdapter;
     }
 
@@ -104,7 +104,7 @@ public class MyItemTouchCallback extends ItemTouchHelper.Callback {
     private int bkcolor = -1;
 
     private OnDragListener onDragListener;
-    public MyItemTouchCallback setOnDragListener(OnDragListener onDragListener) {
+    public DragItemTouchCallback setOnDragListener(OnDragListener onDragListener) {
         this.onDragListener = onDragListener;
         return this;
     }

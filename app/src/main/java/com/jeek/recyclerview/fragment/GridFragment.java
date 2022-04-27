@@ -15,7 +15,7 @@ import com.jeek.recyclerview.common.DividerGridItemDecoration;
 import com.jeek.recyclerview.entity.Item;
 import com.jeek.recyclerview.R;
 import com.jeek.recyclerview.adapter.RecyclerAdapter;
-import com.jeek.recyclerview.helper.MyItemTouchCallback;
+import com.jeek.recyclerview.helper.DragItemTouchCallback;
 import com.jeek.recyclerview.helper.OnRecyclerItemClickListener;
 import com.jeek.recyclerview.utils.ACache;
 import com.jeek.recyclerview.utils.VibratorUtil;
@@ -28,7 +28,7 @@ import java.util.List;
  * 2022/4/27
  * des:
  **/
-public class GridFragment extends Fragment implements MyItemTouchCallback.OnDragListener{
+public class GridFragment extends Fragment implements DragItemTouchCallback.OnDragListener{
 
     private List<Item> results = new ArrayList<Item>();
 
@@ -76,7 +76,7 @@ public class GridFragment extends Fragment implements MyItemTouchCallback.OnDrag
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         recyclerView.addItemDecoration(new DividerGridItemDecoration(getActivity()));
 
-        itemTouchHelper = new ItemTouchHelper(new MyItemTouchCallback(adapter).setOnDragListener(this));
+        itemTouchHelper = new ItemTouchHelper(new DragItemTouchCallback(adapter).setOnDragListener(this));
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         recyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(recyclerView) {

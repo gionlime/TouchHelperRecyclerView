@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.jeek.recyclerview.entity.Item;
 import com.jeek.recyclerview.R;
-import com.jeek.recyclerview.helper.MyItemTouchCallback;
+import com.jeek.recyclerview.helper.DragItemTouchCallback;
 
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.List;
  * 2022/4/27
  * des:
  **/
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> implements MyItemTouchCallback.ItemTouchAdapter {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> implements DragItemTouchCallback.ItemTouchAdapter {
 
     private Context context;
     private int src;
