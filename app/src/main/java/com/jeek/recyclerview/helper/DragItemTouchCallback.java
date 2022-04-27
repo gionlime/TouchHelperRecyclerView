@@ -15,11 +15,14 @@ import androidx.recyclerview.widget.RecyclerView;
  **/
 public class DragItemTouchCallback extends ItemTouchHelper.Callback {
 
+    private static final String TAG = "DragItemTouchCallback";
+    public final static int DRAGFLAGS_UP_DAOWN = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+    public final static int DRAGFLAGS_LEFT_RIGHT = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
     private ItemTouchAdapter itemTouchAdapter;
     private Drawable background = null;
     private int bkcolor = -1;
     private OnDragListener onDragListener;
-
+    private int dragFlags = -1;
 
     public DragItemTouchCallback(ItemTouchAdapter itemTouchAdapter) {
         this.itemTouchAdapter = itemTouchAdapter;
@@ -38,11 +41,13 @@ public class DragItemTouchCallback extends ItemTouchHelper.Callback {
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         if (recyclerView.getLayoutManager() instanceof GridLayoutManager) {
-            final int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+            dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
             final int swipeFlags = 0;
             return makeMovementFlags(dragFlags, swipeFlags);
         } else {
-            final int dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+            if (dragFlags == -1){
+                dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+            }
             //final int swipeFlags = ItemTouchHelper.START | ItemTouchHelper.END;
             final int swipeFlags = 0;
             return makeMovementFlags(dragFlags, swipeFlags);
@@ -103,6 +108,14 @@ public class DragItemTouchCallback extends ItemTouchHelper.Callback {
         if (onDragListener != null) {
             onDragListener.onFinishDrag();
         }
+    }
+
+    public int getDragFlags() {
+        return dragFlags;
+    }
+
+    public void setDragFlags(int dragFlags) {
+        this.dragFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
     }
 
     public DragItemTouchCallback setOnDragListener(OnDragListener onDragListener) {

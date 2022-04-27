@@ -63,8 +63,9 @@ public class HorizontalFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-
-        final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new DragItemTouchCallback(adapter));
+        DragItemTouchCallback dragItemTouchCallback = new DragItemTouchCallback(adapter);
+        dragItemTouchCallback.setDragFlags(DragItemTouchCallback.DRAGFLAGS_LEFT_RIGHT);
+        final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(dragItemTouchCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         recyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(recyclerView) {
