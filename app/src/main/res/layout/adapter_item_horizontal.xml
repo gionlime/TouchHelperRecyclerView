@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/item"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
     android:clickable="true"
     android:focusable="true"
+    android:background="#ff0000"
     android:foreground="?selectableItemBackground">
+
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerInParent="true"
+        android:scaleType="center"
+        android:src="@drawable/item_img" />
 
     <TextView
         android:id="@+id/item_text"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/item_img"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <ImageView
-        android:id="@+id/item_img"
-        android:layout_width="?listPreferredItemHeight"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical|right"
-        android:scaleType="center"
-        android:src="@drawable/item_img" />
-</FrameLayout>
+</RelativeLayout>
