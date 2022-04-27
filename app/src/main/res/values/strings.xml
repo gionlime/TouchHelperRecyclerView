@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">DragRecyclerView</string>
+    <string name="app_name">TouchHelperRV</string>
     <string name="action_settings">Settings</string>
 </resources>

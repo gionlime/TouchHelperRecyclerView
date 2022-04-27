@@ -2,8 +2,6 @@ package com.liaoinstan.dragrecyclerview.activity;
 
 import android.os.Bundle;
 
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.app.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.View;
@@ -12,9 +10,10 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.liaoinstan.dragrecyclerview.R;
+import com.liaoinstan.dragrecyclerview.fragment.HorizontalFragment;
 import com.liaoinstan.dragrecyclerview.fragment.MainFragment;
-import com.liaoinstan.dragrecyclerview.fragment.MyGridFragment;
-import com.liaoinstan.dragrecyclerview.fragment.MyListFragment;
+import com.liaoinstan.dragrecyclerview.fragment.GridFragment;
+import com.liaoinstan.dragrecyclerview.fragment.VerticalFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -39,11 +38,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Fragment fragment = null;
         switch (v.getId()){
-            case R.id.list:
-                fragment = new MyListFragment();
+            case R.id.vertical:
+                fragment = new VerticalFragment();
                 break;
+
+            case R.id.horizontal:
+                fragment = new HorizontalFragment();
+                break;
+
             case R.id.grid:
-                fragment = new MyGridFragment();
+                fragment = new GridFragment();
                 break;
         }
         getSupportFragmentManager().beginTransaction()

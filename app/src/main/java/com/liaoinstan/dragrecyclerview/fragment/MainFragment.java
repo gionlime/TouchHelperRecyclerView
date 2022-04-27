@@ -24,7 +24,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.list).setOnClickListener(this);
+        view.findViewById(R.id.vertical).setOnClickListener(this);
+        view.findViewById(R.id.horizontal).setOnClickListener(this);
         view.findViewById(R.id.grid).setOnClickListener(this);
     }
 

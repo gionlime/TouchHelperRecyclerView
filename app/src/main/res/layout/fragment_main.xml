@@ -5,10 +5,17 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/list"
+        android:id="@+id/vertical"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="list"/>
+        android:text="Vertical"/>
+
+
+    <Button
+        android:id="@+id/horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Horizontal"/>
 
     <Button
         android:id="@+id/grid"

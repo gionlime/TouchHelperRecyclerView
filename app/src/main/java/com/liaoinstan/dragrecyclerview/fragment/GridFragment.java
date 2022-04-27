@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/4/12.
  */
-public class MyGridFragment extends Fragment implements MyItemTouchCallback.OnDragListener{
+public class GridFragment extends Fragment implements MyItemTouchCallback.OnDragListener{
 
     private List<Item> results = new ArrayList<Item>();
 
@@ -67,7 +67,7 @@ public class MyGridFragment extends Fragment implements MyItemTouchCallback.OnDr
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.item_grid,results);
+        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_grid,results);
         recyclerView = (RecyclerView)view;
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
