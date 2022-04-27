@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.fragment;
+package com.jeek.recyclerview.fragment;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.liaoinstan.dragrecyclerview.R;
+import com.jeek.recyclerview.R;
 
 /**
  * create by jeek

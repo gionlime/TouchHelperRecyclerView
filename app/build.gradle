@@ -5,7 +5,7 @@ android {
     buildToolsVersion "32.0.0"
 
     defaultConfig {
-        applicationId "com.liaoinstan.dragrecyclerview"
+        applicationId "com.jeek.recyclerview"
         minSdkVersion 21
         targetSdkVersion 32
         versionCode 1

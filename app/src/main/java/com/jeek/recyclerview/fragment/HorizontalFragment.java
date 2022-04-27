@@ -1,21 +1,22 @@
-package com.liaoinstan.dragrecyclerview.fragment;
+package com.jeek.recyclerview.fragment;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.liaoinstan.dragrecyclerview.entity.Item;
-import com.liaoinstan.dragrecyclerview.R;
-import com.liaoinstan.dragrecyclerview.adapter.RecyclerAdapter;
-import com.liaoinstan.dragrecyclerview.helper.MyItemTouchCallback;
-import com.liaoinstan.dragrecyclerview.helper.OnRecyclerItemClickListener;
-import com.liaoinstan.dragrecyclerview.utils.VibratorUtil;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.jeek.recyclerview.R;
+import com.jeek.recyclerview.adapter.RecyclerAdapter;
+import com.jeek.recyclerview.entity.Item;
+import com.jeek.recyclerview.helper.MyItemTouchCallback;
+import com.jeek.recyclerview.helper.OnRecyclerItemClickListener;
+import com.jeek.recyclerview.utils.VibratorUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
  * 2022/4/27
  * des:
  **/
-public class VerticalFragment extends Fragment{
+public class HorizontalFragment extends Fragment{
 
     private List<Item> results = new ArrayList<Item>();
 
@@ -60,7 +61,7 @@ public class VerticalFragment extends Fragment{
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new MyItemTouchCallback(adapter));

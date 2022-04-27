@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.activity;
+package com.jeek.recyclerview.activity;
 
 import android.os.Bundle;
 
@@ -8,12 +8,11 @@ import android.view.View;
 
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.appbar.AppBarLayout;
-import com.liaoinstan.dragrecyclerview.R;
-import com.liaoinstan.dragrecyclerview.fragment.HorizontalFragment;
-import com.liaoinstan.dragrecyclerview.fragment.MainFragment;
-import com.liaoinstan.dragrecyclerview.fragment.GridFragment;
-import com.liaoinstan.dragrecyclerview.fragment.VerticalFragment;
+import com.jeek.recyclerview.R;
+import com.jeek.recyclerview.fragment.HorizontalFragment;
+import com.jeek.recyclerview.fragment.MainFragment;
+import com.jeek.recyclerview.fragment.GridFragment;
+import com.jeek.recyclerview.fragment.VerticalFragment;
 /**
  * create by jeek
  * 2022/4/27

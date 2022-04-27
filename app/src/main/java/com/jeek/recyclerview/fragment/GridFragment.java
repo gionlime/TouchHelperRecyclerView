@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.fragment;
+package com.jeek.recyclerview.fragment;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -11,14 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.liaoinstan.dragrecyclerview.common.DividerGridItemDecoration;
-import com.liaoinstan.dragrecyclerview.entity.Item;
-import com.liaoinstan.dragrecyclerview.R;
-import com.liaoinstan.dragrecyclerview.adapter.RecyclerAdapter;
-import com.liaoinstan.dragrecyclerview.helper.MyItemTouchCallback;
-import com.liaoinstan.dragrecyclerview.helper.OnRecyclerItemClickListener;
-import com.liaoinstan.dragrecyclerview.utils.ACache;
-import com.liaoinstan.dragrecyclerview.utils.VibratorUtil;
+import com.jeek.recyclerview.common.DividerGridItemDecoration;
+import com.jeek.recyclerview.entity.Item;
+import com.jeek.recyclerview.R;
+import com.jeek.recyclerview.adapter.RecyclerAdapter;
+import com.jeek.recyclerview.helper.MyItemTouchCallback;
+import com.jeek.recyclerview.helper.OnRecyclerItemClickListener;
+import com.jeek.recyclerview.utils.ACache;
+import com.jeek.recyclerview.utils.VibratorUtil;
 
 import java.util.ArrayList;
 import java.util.List;

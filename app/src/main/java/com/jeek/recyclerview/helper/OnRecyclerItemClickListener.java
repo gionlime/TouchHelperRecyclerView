@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.helper;
+package com.jeek.recyclerview.helper;
 
 import androidx.core.view.GestureDetectorCompat;
 import androidx.recyclerview.widget.RecyclerView;

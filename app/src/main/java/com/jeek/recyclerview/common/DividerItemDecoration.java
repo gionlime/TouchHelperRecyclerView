@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.common;
+package com.jeek.recyclerview.common;
 
 import android.content.Context;
 import android.content.res.TypedArray;

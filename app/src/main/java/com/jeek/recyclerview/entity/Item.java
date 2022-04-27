@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.entity;
+package com.jeek.recyclerview.entity;
 
 import java.io.Serializable;
 

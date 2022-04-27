@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.adapter;
+package com.jeek.recyclerview.adapter;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,9 +9,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.liaoinstan.dragrecyclerview.entity.Item;
-import com.liaoinstan.dragrecyclerview.R;
-import com.liaoinstan.dragrecyclerview.helper.MyItemTouchCallback;
+import com.jeek.recyclerview.entity.Item;
+import com.jeek.recyclerview.R;
+import com.jeek.recyclerview.helper.MyItemTouchCallback;
 
 import java.util.Collections;
 import java.util.List;

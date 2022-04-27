@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.utils;
+package com.jeek.recyclerview.utils;
 
 import android.app.Activity;
 import android.app.Service;

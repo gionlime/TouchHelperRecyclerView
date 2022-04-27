@@ -1,4 +1,4 @@
-package com.liaoinstan.dragrecyclerview.helper;
+package com.jeek.recyclerview.helper;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
