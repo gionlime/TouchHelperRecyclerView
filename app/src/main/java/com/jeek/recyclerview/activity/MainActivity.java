@@ -1,24 +1,24 @@
 package com.jeek.recyclerview.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import android.view.View;
-
 import androidx.fragment.app.Fragment;
 
 import com.jeek.recyclerview.R;
+import com.jeek.recyclerview.fragment.GridFragment;
 import com.jeek.recyclerview.fragment.HorizontalFragment;
 import com.jeek.recyclerview.fragment.MainFragment;
-import com.jeek.recyclerview.fragment.GridFragment;
 import com.jeek.recyclerview.fragment.VerticalFragment;
+
 /**
  * create by jeek
  * 2022/4/27
  * des:
  **/
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if (savedInstanceState==null){
+        if (savedInstanceState == null) {
             MainFragment mainFragment = new MainFragment();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment,mainFragment)
+                    .add(R.id.fragment, mainFragment)
                     .commit();
         }
     }
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Fragment fragment = null;
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.vertical:
                 fragment = new VerticalFragment();
                 break;

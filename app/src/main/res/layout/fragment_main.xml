@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/vertical"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Vertical"/>
+        android:text="Vertical" />
 
 
     <Button
         android:id="@+id/horizontal"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Horizontal"/>
+        android:text="Horizontal" />
 
     <Button
         android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="grid"/>
+        android:text="grid" />
 </LinearLayout>

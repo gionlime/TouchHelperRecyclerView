@@ -3,9 +3,10 @@ package com.jeek.recyclerview.helper;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * create by jeek
@@ -15,7 +16,12 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 public class DragItemTouchCallback extends ItemTouchHelper.Callback {
 
     private ItemTouchAdapter itemTouchAdapter;
-    public DragItemTouchCallback(ItemTouchAdapter itemTouchAdapter){
+    private Drawable background = null;
+    private int bkcolor = -1;
+    private OnDragListener onDragListener;
+
+
+    public DragItemTouchCallback(ItemTouchAdapter itemTouchAdapter) {
         this.itemTouchAdapter = itemTouchAdapter;
     }
 
@@ -28,7 +34,6 @@ public class DragItemTouchCallback extends ItemTouchHelper.Callback {
     public boolean isItemViewSwipeEnabled() {
         return true;
     }
-
 
     @Override
     public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
@@ -48,7 +53,7 @@ public class DragItemTouchCallback extends ItemTouchHelper.Callback {
     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
         int fromPosition = viewHolder.getAdapterPosition();//得到拖动ViewHolder的position
         int toPosition = target.getAdapterPosition();//得到目标ViewHolder的position
-        itemTouchAdapter.onMove(fromPosition,toPosition);
+        itemTouchAdapter.onMove(fromPosition, toPosition);
         return true;
     }
 
@@ -95,25 +100,23 @@ public class DragItemTouchCallback extends ItemTouchHelper.Callback {
         if (bkcolor != -1) viewHolder.itemView.setBackgroundColor(bkcolor);
         //viewHolder.itemView.setBackgroundColor(0);
 
-        if (onDragListener!=null){
+        if (onDragListener != null) {
             onDragListener.onFinishDrag();
         }
     }
 
-    private Drawable background = null;
-    private int bkcolor = -1;
-
-    private OnDragListener onDragListener;
     public DragItemTouchCallback setOnDragListener(OnDragListener onDragListener) {
         this.onDragListener = onDragListener;
         return this;
     }
-    public interface OnDragListener{
+
+    public interface OnDragListener {
         void onFinishDrag();
     }
 
     public interface ItemTouchAdapter {
-        void onMove(int fromPosition,int toPosition);
+        void onMove(int fromPosition, int toPosition);
+
         void onSwiped(int position);
     }
 }

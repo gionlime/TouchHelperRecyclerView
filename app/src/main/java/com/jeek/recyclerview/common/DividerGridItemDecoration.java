@@ -7,13 +7,13 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 import androidx.recyclerview.widget.RecyclerView.State;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import android.view.View;
 
 /**
  * create by jeek
@@ -163,7 +163,7 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
 ////            }
 //        }
 //        else {
-            outRect.set(0, 0, lineWidth, lineWidth);
+        outRect.set(0, 0, lineWidth, lineWidth);
 //        }
     }
 }

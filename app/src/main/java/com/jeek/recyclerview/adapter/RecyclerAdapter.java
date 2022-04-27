@@ -1,7 +1,6 @@
 package com.jeek.recyclerview.adapter;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,10 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jeek.recyclerview.entity.Item;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.jeek.recyclerview.R;
+import com.jeek.recyclerview.entity.Item;
 import com.jeek.recyclerview.helper.DragItemTouchCallback;
 
 import java.util.Collections;
@@ -27,7 +28,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private int src;
     private List<Item> results;
 
-    public RecyclerAdapter(int src,List<Item> results){
+    public RecyclerAdapter(int src, List<Item> results) {
         this.results = results;
         this.src = src;
     }
@@ -52,7 +53,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     @Override
     public void onMove(int fromPosition, int toPosition) {
-        if (fromPosition==results.size()-1 || toPosition==results.size()-1){
+        if (fromPosition == results.size() - 1 || toPosition == results.size() - 1) {
             return;
         }
         if (fromPosition < toPosition) {
@@ -73,7 +74,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         notifyItemRemoved(position);
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textView;
         public ImageView imageView;
@@ -83,7 +84,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             int width = wm.getDefaultDisplay().getWidth();
             ViewGroup.LayoutParams layoutParams = itemView.getLayoutParams();
-            layoutParams.height = width/4;
+            layoutParams.height = width / 4;
             itemView.setLayoutParams(layoutParams);
             textView = (TextView) itemView.findViewById(R.id.item_text);
             imageView = (ImageView) itemView.findViewById(R.id.item_img);

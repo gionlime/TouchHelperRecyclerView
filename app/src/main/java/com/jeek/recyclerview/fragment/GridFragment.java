@@ -1,20 +1,21 @@
 package com.jeek.recyclerview.fragment;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.jeek.recyclerview.common.DividerGridItemDecoration;
-import com.jeek.recyclerview.entity.Item;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.jeek.recyclerview.R;
 import com.jeek.recyclerview.adapter.RecyclerAdapter;
+import com.jeek.recyclerview.common.DividerGridItemDecoration;
+import com.jeek.recyclerview.entity.Item;
 import com.jeek.recyclerview.helper.DragItemTouchCallback;
 import com.jeek.recyclerview.helper.OnRecyclerItemClickListener;
 import com.jeek.recyclerview.utils.ACache;
@@ -28,9 +29,11 @@ import java.util.List;
  * 2022/4/27
  * des:
  **/
-public class GridFragment extends Fragment implements DragItemTouchCallback.OnDragListener{
+public class GridFragment extends Fragment implements DragItemTouchCallback.OnDragListener {
 
     private List<Item> results = new ArrayList<Item>();
+    private RecyclerView recyclerView;
+    private ItemTouchHelper itemTouchHelper;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class GridFragment extends Fragment implements DragItemTouchCallback.OnDr
         ////////////////////////////////////////////////////////
         /////////初始化数据，如果缓存中有就使用缓存中的
         ArrayList<Item> items = (ArrayList<Item>) ACache.get(getActivity()).getAsObject("items");
-        if (items!=null)
+        if (items != null)
             results.addAll(items);
         else {
             for (int i = 0; i < 3; i++) {
@@ -52,7 +55,7 @@ public class GridFragment extends Fragment implements DragItemTouchCallback.OnDr
                 results.add(new Item(i * 8 + 7, "游戏", R.drawable.takeout_ic_category_sweet));
             }
         }
-        results.remove(results.size()-1);
+        results.remove(results.size() - 1);
         results.add(new Item(results.size(), "更多", R.drawable.takeout_ic_more));
         ////////////////////////////////////////////////////////
     }
@@ -63,14 +66,12 @@ public class GridFragment extends Fragment implements DragItemTouchCallback.OnDr
         return new RecyclerView(container.getContext());
     }
 
-    private RecyclerView recyclerView;
-    private ItemTouchHelper itemTouchHelper;
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_grid,results);
-        recyclerView = (RecyclerView)view;
+        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_grid, results);
+        recyclerView = (RecyclerView) view;
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
@@ -82,15 +83,16 @@ public class GridFragment extends Fragment implements DragItemTouchCallback.OnDr
         recyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(recyclerView) {
             @Override
             public void onLongClick(RecyclerView.ViewHolder vh) {
-                if (vh.getLayoutPosition()!=results.size()-1) {
+                if (vh.getLayoutPosition() != results.size() - 1) {
                     itemTouchHelper.startDrag(vh);
                     VibratorUtil.Vibrate(getActivity(), 70);   //震动70ms
                 }
             }
+
             @Override
             public void onItemClick(RecyclerView.ViewHolder vh) {
                 Item item = results.get(vh.getLayoutPosition());
-                Toast.makeText(getActivity(),item.getId()+" "+item.getName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), item.getId() + " " + item.getName(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -98,6 +100,6 @@ public class GridFragment extends Fragment implements DragItemTouchCallback.OnDr
     @Override
     public void onFinishDrag() {
         //存入缓存
-        ACache.get(getActivity()).put("items",(ArrayList<Item>)results);
+        ACache.get(getActivity()).put("items", (ArrayList<Item>) results);
     }
 }

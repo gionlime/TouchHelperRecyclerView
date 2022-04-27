@@ -26,22 +26,22 @@ import java.util.List;
  * 2022/4/27
  * des:
  **/
-public class HorizontalFragment extends Fragment{
+public class HorizontalFragment extends Fragment {
 
     private List<Item> results = new ArrayList<Item>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        for (int i=0;i<3;i++){
-            results.add(new Item(i*8+0,"Item1", R.drawable.takeout_ic_category_brand));
-            results.add(new Item(i*8+1,"Item2", R.drawable.takeout_ic_category_flower));
-            results.add(new Item(i*8+2,"Item3", R.drawable.takeout_ic_category_fruit));
-            results.add(new Item(i*8+3,"Item4", R.drawable.takeout_ic_category_medicine));
-            results.add(new Item(i*8+4,"Item5", R.drawable.takeout_ic_category_motorcycle));
-            results.add(new Item(i*8+5,"Item6", R.drawable.takeout_ic_category_public));
-            results.add(new Item(i*8+6,"Item7", R.drawable.takeout_ic_category_store));
-            results.add(new Item(i*8+7,"Item8", R.drawable.takeout_ic_category_sweet));
+        for (int i = 0; i < 3; i++) {
+            results.add(new Item(i * 8 + 0, "Item1", R.drawable.takeout_ic_category_brand));
+            results.add(new Item(i * 8 + 1, "Item2", R.drawable.takeout_ic_category_flower));
+            results.add(new Item(i * 8 + 2, "Item3", R.drawable.takeout_ic_category_fruit));
+            results.add(new Item(i * 8 + 3, "Item4", R.drawable.takeout_ic_category_medicine));
+            results.add(new Item(i * 8 + 4, "Item5", R.drawable.takeout_ic_category_motorcycle));
+            results.add(new Item(i * 8 + 5, "Item6", R.drawable.takeout_ic_category_public));
+            results.add(new Item(i * 8 + 6, "Item7", R.drawable.takeout_ic_category_store));
+            results.add(new Item(i * 8 + 7, "Item8", R.drawable.takeout_ic_category_sweet));
         }
     }
 
@@ -55,9 +55,9 @@ public class HorizontalFragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_list,results);
+        RecyclerAdapter adapter = new RecyclerAdapter(R.layout.adapter_item_list, results);
 
-        RecyclerView recyclerView = (RecyclerView)view;
+        RecyclerView recyclerView = (RecyclerView) view;
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
@@ -70,7 +70,7 @@ public class HorizontalFragment extends Fragment{
         recyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(recyclerView) {
             @Override
             public void onLongClick(RecyclerView.ViewHolder vh) {
-                if (vh.getLayoutPosition()!=results.size()-1) {
+                if (vh.getLayoutPosition() != results.size() - 1) {
                     itemTouchHelper.startDrag(vh);
                     VibratorUtil.Vibrate(getActivity(), 70);   //震动70ms
                 }

@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 2022/4/27
  * des:
  **/
-public class Item implements Serializable{
+public class Item implements Serializable {
     private int id;
     private String name;
     private int img;
