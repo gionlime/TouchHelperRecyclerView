@@ -115,7 +115,7 @@ public class DragItemTouchCallback extends ItemTouchHelper.Callback {
     }
 
     public void setDragFlags(int dragFlags) {
-        this.dragFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        this.dragFlags = dragFlags;
     }
 
     public DragItemTouchCallback setOnDragListener(OnDragListener onDragListener) {

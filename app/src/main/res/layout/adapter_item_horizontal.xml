@@ -5,7 +5,6 @@
     android:layout_height="50dp"
     android:clickable="true"
     android:focusable="true"
-    android:background="#ff0000"
     android:foreground="?selectableItemBackground">
 
 
